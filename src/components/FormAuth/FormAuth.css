@@ -5,13 +5,13 @@
 
 .form-auth {
     grid-area: auth-form;
-    display:grid;
+    display: grid;
 
     grid-template: 1fr 1fr var(--sizes-xs) 1fr / 1fr 1.5fr 1fr;
     grid-template-areas: "login login login"
                         "pass pass pass"
                         ". . ."
-                        ". auth ."
+                        ". auth-button ."
     ;
 }
 
@@ -24,6 +24,6 @@
 }
 
 .action {
-    grid-area: auth;
+    grid-area: auth-button;
     background-color: var(--main-background-color);
 }

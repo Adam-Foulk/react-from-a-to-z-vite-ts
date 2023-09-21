@@ -1,9 +1,9 @@
 import "./less/App.less"
-import FormAuth from "./components/FormAuth/FormAuth"
+import Form from "./components/Form/Form"
 function App() {
   return (
     <>
-      <FormAuth/>
+      <Form/>
     </>
   )
 }
