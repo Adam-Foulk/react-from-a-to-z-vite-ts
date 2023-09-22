@@ -1,8 +1,8 @@
 import classes from './MyInput.module.less'
 
-const MyInput = (props) => {
+const MyInput = ({className, ...props}) => {
     return (
-        <input {...props} className={classes.myInput}/>
+        <input {...props} className={`${className} ${classes.myInput}`}/>
     );
 };
 

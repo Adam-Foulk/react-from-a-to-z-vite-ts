@@ -1,9 +1,6 @@
+@import "../UI/main.less";
 
-.main-color {
-    background-color: var(--main-background-color);
-}
-
-.form-auth {
+.formAuth {
     grid-area: auth-form;
     display:grid;
 
@@ -13,17 +10,17 @@
                         ". . ."
                         ". auth ."
     ;
-}
-
-.login {
-    grid-area: login;
-}
+    .login {
+        grid-area: login;
+    }
+        
+    .pass {
+        grid-area: pass;
+    }
     
-.pass {
-    grid-area: pass;
+    .action {
+        grid-area: auth;
+        background-color: var(--main-background-color);
+    }
 }
 
-.action {
-    grid-area: auth;
-    background-color: var(--main-background-color);
-}

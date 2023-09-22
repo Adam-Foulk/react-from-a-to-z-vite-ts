@@ -1,9 +1,10 @@
 import "./less/App.less"
-import FormAuth from "./components/FormAuth/FormAuth"
+import AuthPage from "./components/AuthPage/AuthPage"
+
 function App() {
   return (
     <>
-      <FormAuth/>
+      <AuthPage/>
     </>
   )
 }

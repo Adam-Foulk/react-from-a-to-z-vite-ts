@@ -1,8 +1,9 @@
 import classes from './MyButton.module.less'
 
-const MyButton = ({children, ...props}) => {
+const MyButton = ({children, className, ...props}) => {
+    className = `${className} ${classes.myBtn}`
     return (
-        <button {...props} className={classes.myBtn}>
+        <button {...props} className = {className}>
             {children}
         </button>
     );
