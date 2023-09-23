@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main-page</title>
+    <link rel="stylesheet/less" href="./less/main.less">
+</head>
+<body>
+    <div class="content">
+        <main class="main">
+            <div class="top-left">
+                <button class="settings">
+                    <img src="./res/settings.svg" alt="">
+                </button>
+                <button class="news">
+                    <p>
+                        No news is good news...
+                    </p>
+                    <p>
+                        (press for watching history)
+                    </p>
+                </button>
+                <main>
+                    <div class="bonus-card-info">
+                        <button class="item"><img src="./res/qr-code.svg" alt="icon-app-qr-code">scan qr-code from app</button>
+                        <button class="item"><img src="./res/phone-number.svg" alt="icon-phone-number">input phone number with terminal</button>
+                        <button class="item"><img src="./res/card.svg" alt="icon-magnetic-card">take magnetic card</button>
+                    </div>
+                    <div class="hint">
+                        <div class="icon">!</div>
+                        <p>Welcome to the station!</p>
+                    </div>
+                </main>
+            </div>
+            <div class="top-right">
+                <div class="filling-places">
+                    <div class="enabled">
+                        <button index="1">1</button>
+                        <label for=""></label>
+                    </div>
+                    <div class="disabled">
+                        <button>2</button>
+                        <label for=""></label>
+                    </div>
+                    <div class="filling">
+                        <button class="a95">a95</button>
+                        <label for="">25.0 / 28.8</label>
+                    </div>
+                    <div class="filled">
+                        <button class="m95">m95</button>
+                        <label for="">25.0 / 25.0</label>
+                    </div>
+                    <div class="returning">
+                        <button class="dp">dp</button>
+                        <label for="">25.0 / 28.8</label>
+                    </div>
+                    <div class="filling">
+                        <button class="mdp">mdp</button>
+                        <label for=""></label>
+                    </div>
+                    <div class="filling">
+                        <button class="lpg">lpg</button>
+                        <label for=""></label>
+                    </div>
+                    <div class="enabled">
+                        <button>8</button>
+                        <label for=""></label>
+                    </div>
+                </div>
+                <!-- <div class="places-input-form">
+                    <div class="fuel-type">
+                        <button class="button">NF</button>
+                        <div class="form">
+                            <button class="a95">A95</button>
+                            <button class="m95">M95</button>
+                            <button class="dp">DP</button>
+                            <button class="mdp">MDP</button>
+                            <button class="lpg">LPG</button>
+                            <button class="nf">NF</button>
+                        </div>
+                    </div>
+                    <div class="form-fields">
+                        <button>
+                            <p>Liters quantity</p>
+                            <p>15892.20</p>
+                        </button>
+                        <button>
+                            <p>Price</p>
+                            <p>15892.20</p>
+                        </button>
+                        <button>
+                            <p>Discount</p>
+                            <p>15892.20</p>
+                        </button>
+                        <button>
+                            <p>Result Price</p>
+                            <p>15892</p>
+                        </button>
+                    </div>
+                </div> -->
+                <!-- <div class="product-catalog">
+                    <button class="fast-food item">
+                        <img src="./res/product-catalog/french-hot-dog.svg" alt="">
+                        <p>hot dogs</p>
+                    </button>
+                    <button class="fast-food item">
+                        <img src="./res/product-catalog/burger.svg" alt="">
+                        <p>burgers</p>
+                    </button>
+                    <button class="healthy-food item">
+                        <img src="./res/product-catalog/soup-plate.svg" alt="">
+                        <p>first meal</p>
+                    </button>
+                    <button class="healthy-food item">
+                        <img src="./res/product-catalog/spaguetti.svg" alt="">
+                        <p>main dishes</p>
+                    </button>
+                    <button class="fast-food item">
+                        <img src="./res/product-catalog/french-fries.svg" alt="">
+                        <p>snacks</p>
+                    </button>
+                    <button class="fast-food item">
+                        <img src="./res/product-catalog/sandwich.svg" alt="">
+                        <p>sandwiches</p>
+                    </button>
+                    <button class="healthy-food item">
+                        <img src="./res/product-catalog/salade.svg" alt="">
+                        <p>salads</p>
+                    </button>
+                    <button class="healthy-food item">
+                        <img src="./res/product-catalog/breakfast.svg" alt="">
+                        <p>breakfasts</p>
+                    </button>
+                    <button class="baverages item">
+                        <img src="./res/product-catalog/coffee.svg" alt="">
+                        <p>coffee</p>
+                    </button>
+                    <button class="baverages item">
+                        <img src="./res/product-catalog/tea.svg" alt="">
+                        <p>tea</p>
+                    </button>
+                    <button class="bakery item">
+                        <img src="./res/product-catalog/cake.svg" alt="">
+                        <p>desserts</p>
+                    </button>
+                    <button class="bakery item">
+                        <img src="./res/product-catalog/cupcakesvg.svg" alt="">
+                        <p>cupcakes</p>
+                    </button>
+                    <button class="baverages item">
+                        <img src="./res/product-catalog/cold-coffee.svg" alt="">
+                        <p>cold coffee</p>
+                    </button>
+                    <button class="baverages item">
+                        <img src="./res/product-catalog/cold-drink.svg" alt="">
+                        <p>cold drinks</p>
+                    </button>
+                    <button class="bakery item">
+                        <img src="./res/product-catalog/donut.svg" alt="">
+                        <p>donuts</p>
+                    </button>
+                    <button class="bakery item">
+                        <img src="./res/product-catalog/croissant.svg" alt="">
+                        <p>own bakery</p>
+                    </button>
+                </div> -->
+            </div>
+            <div class="bottom-left">
+                <header>
+                    <div class="tabs-pannel">
+                        <button class="tab active">
+                            <img src="./res/tabs-pannel/active.svg" alt="">
+                            <p>375.00</p>
+                        </button>
+                        <button class="tab">
+                            <img src="./res/tabs-pannel/background.svg" alt="">
+                            <p>522.55</p>
+                        </button>
+                        <button class="create-tab">
+                            <img src="./res/tabs-pannel/add.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="list-buttons">
+                        <button><img src="./res/tabs-pannel/arrow-up.svg" alt=""></button>
+                        <button><img src="./res/tabs-pannel/arrow-down.svg" alt=""></button>
+                    </div>
+                </header>
+                <main>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Rem.</th>
+                                <th>Quant.</th>
+                                <th>price</th>
+                                <th>disc.</th>
+                                <th>sum</th>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Хот-дог класичний XXL т. булка</td>
+                                <td></td>
+                                <td>3</td>
+                                <td>55</td>
+                                <td>5</td>
+                                <td>150</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Бургер яловичий подвійний</td>
+                                <td></td>
+                                <td>3</td>
+                                <td>75</td>
+                                <td></td>
+                                <td>75</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Омивач 3л. Літній диня</td>
+                                <td></td>
+                                <td>1</td>
+                                <td>200</td>
+                                <td>50</td>
+                                <td>150</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>1 / 2</th>
+                                <th></th>
+                                <th></th>
+                                <th>3</th>
+                                <th></th>
+                                <th>65</th>
+                                <th>375</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </main>
+
+            </div>
+            <div class="bottom-middle">
+                <button><img src="./res/order-pannel/order-history.svg" alt=""></button>
+                <button><img src="./res/order-pannel/product-catalog.svg" alt=""></button>
+                <button><img src="./res/order-pannel/product-add.svg" alt=""></button>
+                <button><img src="./res/order-pannel/product-quantity.svg" alt=""></button>
+                <button><img src="./res/order-pannel/product-quantity +1.svg" alt=""></button>
+                <button><img src="./res/order-pannel/product-quantity -1.svg" alt=""></button>
+            </div>
+            <div class="bottom-right">
+                <div class="pay-method-pannel">
+                    <button class="btn-selected"><img src="./res/pay-form/cash.svg" alt="cash"></button>
+                    <button><img src="./res/card.svg" alt="bank"></button>
+                    <button><img src="./res/pay-form/tech-strait.svg" alt="tech-straight"></button>
+                </div>
+                <div class="form-fields">
+                    <button>
+                        <p>Removed bonuses</p>
+                        <p>0.00</p>
+                    </button>
+                    <button>
+                        <p>Total discount</p>
+                        <p>65.0</p>
+                    </button>
+                    <button>
+                        <p>Received</p>
+                        <p>500.0</p>
+                    </button>
+                    <button>
+                        <p>Cash withdrawal</p>
+                        <p>175.0</p>
+                    </button>
+                </div>
+                <button class="check">
+                    <img src="./res/pay-form/cash.svg" alt="">
+                    <p>375.00</p>
+                </button>
+            </div>
+            
+        </main>
+        <footer>
+            <div class="info">
+                <p class="shift-state">opened (24.05.2024 00:00)</p>
+                <div class="state-item">
+                    <img src="./res/status-connected.svg" alt="">
+                    <p>bonus card is working</p>
+                </div>
+                <div class="state-item">
+                    <img src="./res/status-disconnected.svg" alt="">
+                    <p>terminal connected</p>
+                </div>
+            </div>
+            <p class="date-time">15.20.2025 10:22</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+</body>
+</html>

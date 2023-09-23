@@ -1,12 +1,15 @@
 import {useState} from 'react'
 import MyButton from "../UI/MyButton/MyButton"
 import MyInput from "../UI/MyInput/MyInput"
+import InputNumberForm from '../InputNumberForm/InputNumberForm'
 
 import classes from "./FormAuth.module.less"
 const FormAuth = (...props) => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
+
+    const [display, setDisplay] = useState(false)
 
     const auth = (event) => {
         event.preventDefault();
@@ -16,6 +19,13 @@ const FormAuth = (...props) => {
         setPassword('');
     }
     
+    if(display)
+    return (
+        <>
+            <InputNumberForm setDisplay={setDisplay} setNumber={setPassword}/>
+        </>
+    )
+
     return (
         <form {...props} action="" className = {classes.formAuth}>
             <MyInput 
@@ -26,7 +36,8 @@ const FormAuth = (...props) => {
                 placeholder="login..."
             />
             <MyInput
-                value={password} 
+                value={password}
+                onClick={ () => {setDisplay(true)} }
                 onChange= {(event) => setPassword(event.target.value)}
                 className={classes.pass} 
                 type="password" 

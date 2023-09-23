@@ -14,7 +14,7 @@ const InputNumberForm = ({setDisplay, setNumber}) => {
         setDisplay(false)
     }
     const enterHandler = () => {
-        setNumber(Number(value))
+        setNumber(value)
         setDisplay(false)
     }
     

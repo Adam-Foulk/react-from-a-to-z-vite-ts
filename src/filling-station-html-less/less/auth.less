@@ -1,7 +1,8 @@
 @import "./components.less";
-    
+
 main {
     display:grid;
+    display: none;
     height: 100vh;
 
     grid-template: 1fr 15vh 1fr / 
@@ -35,8 +36,13 @@ main {
         ;
     }
 
+
     /* для широкх десктопов */
     @media (min-width:1281px) {
+
+        // input, button {
+        //     font-size: 24pt;
+        // }
 
         grid-template-rows: 1fr 15vh 1fr;
         grid-template-columns: 1fr 25vw 1fr;
@@ -69,6 +75,53 @@ main {
         .action {
             .main-color;
             grid-area: auth;
+        }
+    }
+}
+
+.user-form {
+    width: 100vw;
+    height: 100vh;
+    padding: 5% 25%;
+    display: grid;
+    grid-template: 1fr min-content / 1fr;
+    grid-template-areas: "users" 
+                         "actions"
+    ;
+    gap: var(--sizes-l);
+    
+    .user-list {
+        grid-area: users;
+        display: grid;
+
+        button {
+            font-size: 20pt;
+            border-radius: 0;
+            border: none;
+            text-align: left;
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+    }
+    
+    .action-form {
+        grid-area: actions;
+        display: grid;
+        grid-template: 80px / min-content min-content;
+        grid-template-areas: "actions list";
+        justify-content: space-between;
+        gap: var(--sizes-l);
+        
+        .action-panel {
+            grid-template-columns: repeat(2, 160px);
+            grid-template-rows: 1fr;
+            justify-content: center;
+            align-content: stretch;
+        }
+        .list-buttons {
+            grid-area: list;
+            button {
+                width: 80px;
+            }
         }
     }
 }
