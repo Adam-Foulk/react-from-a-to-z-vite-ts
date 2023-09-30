@@ -2,6 +2,7 @@ import {useState} from 'react';
 import styles from "./InputNumberForm.module.less"
 import MyButton from '../UI/MyButton/MyButton';
 import MyInput from '../UI/MyInput/MyInput';
+import ActionPanel from '../ActionPanel/ActionPanel';
 
 const InputNumberForm = ({setDisplay, setNumber}) => {
     
@@ -39,11 +40,7 @@ const InputNumberForm = ({setDisplay, setNumber}) => {
                 <MyButton onClick={ addText('00')}>00</MyButton>
                 <MyButton onClick={ addText('.') }>.</MyButton>
             </div>
-            <div className={styles.actionPannel}>
-                <MyButton onClick={cancelHandler} className={styles.cancel}>cancel</MyButton>
-                <MyButton onClick={clearHandler} className={styles.clear}>clear</MyButton>
-                <MyButton onClick={enterHandler} className={styles.enter}>enter</MyButton>
-            </div>
+           <ActionPanel direction={'vertical'} cancelHandler={cancelHandler} clearHandler={clearHandler} enterHandler={enterHandler} />
         </div>
     );
 };
