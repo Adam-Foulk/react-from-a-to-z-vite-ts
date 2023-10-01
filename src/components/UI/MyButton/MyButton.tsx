@@ -1,9 +1,9 @@
-import classes from './MyButton.module.less'
+import styles from './MyButton.module.less'
 import {FC} from 'react'
 import classnames from 'classnames';
 
 type MyButtonProps = {
-    className?: Object
+    className?: string
 }
 
 const MyButton: FC<MyButtonProps> = 
@@ -12,10 +12,8 @@ const MyButton: FC<MyButtonProps> =
         children,
         ...props
     ) => {
-    // className = `${className} ${classes.myBtn}`
-    className = {classnames(className, classes.myBtn)}
     return (
-        <button {...props} className = {className}>
+        <button {...props} className = {classnames(className, styles.myBtn)}>
             {children}
         </button>
     );
