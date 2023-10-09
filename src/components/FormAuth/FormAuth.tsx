@@ -6,7 +6,7 @@ import InputNumberForm from '../InputNumberForm/InputNumberForm'
 import InputUserForm from '../InputUserForm/InputUserForm'
 
 import classes from "./FormAuth.module.less"
-const FormAuth = (...props) => {
+const FormAuth = (props) => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')

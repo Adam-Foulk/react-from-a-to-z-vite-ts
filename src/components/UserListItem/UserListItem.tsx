@@ -1,14 +1,17 @@
 import MyButton from '../UI/MyButton/MyButton';
 import styles from './UserListItem.module.less';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 const UserListItem = ({selected, user, clickHandler}) => {
     return (
         <MyButton 
             onClick={clickHandler}
-            className={classnames(styles.user, (selected && styles.selected))}
+            className={classNames(styles.user, (selected && styles.selected))}
             type="button"
-        >{user}</MyButton>
+            key={user.id}
+        >
+            {(user.id < 9)? 0 : ''}{user.id+1} {user.name}
+        </MyButton>
     );
 };
 

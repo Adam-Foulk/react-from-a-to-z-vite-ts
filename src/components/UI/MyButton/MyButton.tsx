@@ -1,22 +1,20 @@
 import styles from './MyButton.module.less'
-import {FC} from 'react'
-import classnames from 'classnames';
+import {FC, HTMLAttributes} from 'react'
+import classNames from 'classnames';
 
-type MyButtonProps = {
-    className?: string
-}
+type MyButtonProps = HTMLAttributes<HTMLButtonElement>
 
 const MyButton: FC<MyButtonProps> = 
-    (
-        className, 
-        children,
+    ({
+        className,
         ...props
-    ) => {
-    return (
-        <button {...props} className = {classnames(className, styles.myBtn)}>
-            {children}
-        </button>
-    );
-};
+    }) => {
 
-export default MyButton;
+        return (
+            <button {...props} className={classNames(className, styles.myBtn)}/>
+        );
+    };
+    
+    export default MyButton;    
+    
+

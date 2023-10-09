@@ -12,10 +12,9 @@ const UserList = ({users, selectedUser, selectUser}) => {
         <form className={styles.userList}>
             {users.map(user => 
                 <UserListItem 
-                    // key={}
-                    selected={selectedUser == user} 
+                    selected={selectedUser == user.name} 
                     user={user} 
-                    clickHandler={selectUserHandler(user)}
+                    clickHandler={selectUserHandler(user.name)}
                 />
             )}
         </form>
