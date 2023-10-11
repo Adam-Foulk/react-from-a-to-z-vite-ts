@@ -1,12 +1,13 @@
 import {useState} from 'react'
+import classes from "./FormAuth.module.less"
+
 import MyButton from "../UI/MyButton/MyButton"
 import MyInput from "../UI/MyInput/MyInput"
 
 import InputNumberForm from '../InputNumberForm/InputNumberForm'
 import InputUserForm from '../InputUserForm/InputUserForm'
 
-import classes from "./FormAuth.module.less"
-const FormAuth = (props) => {
+const FormAuth = ({auth, users, ...props}) => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -14,18 +15,20 @@ const FormAuth = (props) => {
     const [displayNumberForm, setDisplayNumberForm] = useState(false)
     const [displayUserForm, setDisplayUserForm] = useState(false)
 
-    const auth = (event) => {
+    const [displayPassMsg, setDisplayPassMsg] = useState(false)
+
+    const onAuth = (event) => {
         event.preventDefault();
-        console.log(login);
-        console.log(password);
-        setLogin('');
+        const isAuth = auth(login, password)
+        setDisplayPassMsg(!isAuth)
+        if(isAuth) setLogin('')
         setPassword('');
     }
-    
+
     if(displayUserForm)
     return (
         <>
-            <InputUserForm setDisplay={setDisplayUserForm} setUser={setLogin}/>
+            <InputUserForm users={users} setDisplay={setDisplayUserForm} setUser={setLogin}/>
         </>
     )
 
@@ -54,8 +57,9 @@ const FormAuth = (props) => {
                 type="password" 
                 placeholder="password..."
             />
+            <span style={!displayPassMsg? {display:'none'}: {}} className={classes.passMsg}>invalid password</span>
             <MyButton 
-                onClick={auth}
+                onClick={onAuth}
                 className={classes.action}
             >login</MyButton>
         </form>
