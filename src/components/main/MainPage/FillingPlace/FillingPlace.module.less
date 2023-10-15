@@ -1,0 +1,47 @@
+.place {
+    display:grid;   
+    gap: var(--sizes-xs);
+
+    grid-template-rows: 1fr min-content;
+
+    button {
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+    
+    label {
+        height: 1.1em;
+        font-size: 1.1em;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+.active {
+    .enabled;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+.enabled {
+    .place;
+}
+
+.disabled { 
+    .place;
+    button {
+        background-color: var(--place-color-disabled);
+    }
+}
+
+.filling {
+    .active;
+    button { background-color: var(--place-color-filling); }
+}
+
+.filled {
+    .active;
+    button {background-color: var(--place-color-filled);}
+}
+
+.returning {
+    .active;
+    button {background-color: var(--place-color-returning);}
+}

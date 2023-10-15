@@ -1,0 +1,23 @@
+@import "../../UI/main.less";
+
+.bonusCardInfo {
+    display:grid;
+    grid-auto-rows: 20%;
+    row-gap: var(--sizes-xs);
+
+    .item {
+        .corner-rounding;
+        border: none;
+        border-radius: 0;
+        .main-color;
+        display: flex;
+        padding: 0 var(--sizes-m);
+        align-items: center;
+        gap: var(--sizes-l);
+        img {
+            width: fit-content;
+            height: 80%;
+        }   
+        font-size: 12pt;
+    }
+}

@@ -1,0 +1,28 @@
+.actionPanelHorizontal {
+    grid-template-columns: repeat(2, 160px);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-content: stretch;
+}
+.actionPanel {
+    grid-area: actions;
+    display: grid;
+    align-content: center;
+    gap: var(--sizes-s);
+    button {
+        &::first-letter {
+            text-transform: uppercase;
+        }
+        height: 80px;
+        font-size: 22pt;
+    }
+    .cancel {
+        background-color: var(--input-form-cancel);
+    }
+    .clear {
+        background-color: var(--input-form-clear);
+    }
+    .enter {
+        background-color: var(--input-form-enter);
+    }
+}
