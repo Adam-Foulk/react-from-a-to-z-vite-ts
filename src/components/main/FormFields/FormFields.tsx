@@ -13,19 +13,12 @@ const FormFields = ({
     resultPrice,
     setResultPrice,
 }) => {
-    
-
-    
-    // useEffect(() => {
-    //     setLitersQuantity(resultPrice / price)
-    // }, [price, resultPrice])
-    
 
     return (
         <div className={styles.formFields}>
             <Field description="Liters quantity" value={litersQuantity} setValue={setLitersQuantity}/>
-            <Field description="Price" value={price} setValue={setPrice}/>
-            <Field description="Discount" value={discount} setValue={setDiscount}/>
+            <Field description="Price" value={price}/>
+            <Field description="Discount" value={discount}/>
             <Field description="Result Price" value={resultPrice} setValue={setResultPrice}/>
         </div>
     );

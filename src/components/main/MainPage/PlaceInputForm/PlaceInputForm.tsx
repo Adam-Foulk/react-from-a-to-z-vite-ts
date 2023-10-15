@@ -1,6 +1,6 @@
 import styles from "./PlaceInputForm.module.less"
 import FuelType from "../../FuelType/FuelType";
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import FormFields from "../../FormFields/FormFields";
 
 const PlaceInputForm = () => {
@@ -35,12 +35,31 @@ const PlaceInputForm = () => {
     const [fuelType, setFuelType]= useState(fuelTypes.nf)
 
     // must return number
-    console.log(fuelPrices.map((fuelPrice) => {if(fuelPrice.name === fuelType) return fuelPrice.price}));
     const [litersQuantity, setLitersQuantity] = useState(0.0)
     const [price, setPrice] = useState(0.0)
     const [discount, setDiscount] = useState(0.0)
     const [resultPrice , setResultPrice] = useState(0.0)
+    
+    useEffect(() => {
+        for(const fuelPrice of fuelPrices) {
+            if(fuelPrice.name === fuelType) {
+                setPrice(fuelPrice.price)
+            }
+        }    
+    }), [fuelType]
 
+    // трабла 2 взаимо-вычисляемых поля => зацикливание
+    useEffect(() => {
+        if(price > 0)
+            setResultPrice(litersQuantity * price)
+    }), [litersQuantity, price]
+
+    useEffect(() => {
+        if(price > 0)
+            setLitersQuantity(resultPrice / price)
+    }), [resultPrice, price]
+
+        
     return (
         <div className={styles.placeInputForm}>
             <FuelType fuelTypes={fuelTypes} fuelType={fuelType} setFuelType={setFuelType}/>

@@ -3,6 +3,7 @@ import styles from "./FillingPlace.module.less"
 import {useState} from "react";
 
 const FillingPlace = ({
+    placeNumber,
     onClickHandler
 }) => {
 
@@ -15,9 +16,9 @@ const FillingPlace = ({
     }
 
     const [place, setPlace] = useState({
-        placeNumber: 1,
+        placeNumber: placeNumber,
         state: State.enabled,
-        fuelType: 'A95',
+        fuelType: undefined,
         toFill: undefined,
         filled: undefined,
         price: undefined,

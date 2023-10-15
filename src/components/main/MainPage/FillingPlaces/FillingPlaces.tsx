@@ -19,39 +19,15 @@ const FillingPlaces = () => {
 
     return (
         <div className={styles.fillingPlaces}>
-            {/* <div className={styles.enabled}>
-                <MyButton>1</MyButton>
-                <label></label>
-            </div> */}
-            <FillingPlace onClickHandler={onPlaceHandler}/>
-            <div className={styles.disabled}>
-                <MyButton>2</MyButton>
-                <label></label>
-            </div>
-            <div className={styles.filling}>
-                <MyButton className={styles.a95}>a95</MyButton>
-                <label>25.0 / 28.8</label>
-            </div>
-            <div className={styles.filled}>
-                <MyButton className={styles.m95}>m95</MyButton>
-                <label>25.0 / 25.0</label>
-            </div>
-            <div className={styles.returning}>
-                <MyButton className={styles.dp}>dp</MyButton>
-                <label>25.0 / 28.8</label>
-            </div>
-            <div className={styles.filling}>
-                <MyButton className={styles.mdp}>mdp</MyButton>
-                <label></label>
-            </div>
-            <div className={styles.filling}>
-                <MyButton className={styles.lpg}>lpg</MyButton>
-                <label></label>
-            </div>
-            <div className={styles.enabled}>
-                <MyButton>8</MyButton>
-                <label></label>
-            </div>
+            <FillingPlace placeNumber={1} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={2} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={3} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={4} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={5} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={6} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={7} onClickHandler={onPlaceHandler}/>
+            <FillingPlace placeNumber={8} onClickHandler={onPlaceHandler}/>
+
         </div>
     );
 };
