@@ -1,0 +1,29 @@
+@import "components/UI/main.less";
+
+.fuelType {
+    display: flex;
+    justify-content: center;
+    
+    button {
+        height: 100px;
+        width: 100px;
+        text-transform: uppercase;
+    }
+    .form {
+        display: grid;
+        
+        gap: var(--sizes-s);
+        justify-items: stretch;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "a95 dp lpg"
+                             "m95 mdp nf"
+        ;
+        .a95 {grid-area: a95;}
+        .m95 {grid-area: m95;}
+        .dp {grid-area: dp;}
+        .mdp {grid-area: mdp;}
+        .lpg {grid-area: lpg;}
+        .nf {grid-area: nf;}
+    }
+}

@@ -15,14 +15,17 @@ const InputNumberForm = ({setDisplay, setNumber}) => {
         setDisplay(false)
     }
     const enterHandler = () => {
-        setNumber(value || '0')
+        if(value.length > 0)
+            setNumber(value)
+        console.dir(`INputNumberFormValue: ${value}`)
+        // console.log(`value.length: ${value.length}`)
         setDisplay(false)
     }
-    
+
     const addText = (text) => () => (
         setValue(value + text)
     )
-
+    
     return (
         <div className={styles.inputNumberForm}>
             <MyInput type="text" value={value}/>
@@ -40,7 +43,12 @@ const InputNumberForm = ({setDisplay, setNumber}) => {
                 <MyButton onClick={ addText('00')}>00</MyButton>
                 <MyButton onClick={ addText('.') }>.</MyButton>
             </div>
-           <ActionPanel direction={'vertical'} cancelHandler={cancelHandler} clearHandler={clearHandler} enterHandler={enterHandler} />
+           <ActionPanel 
+                direction={'vertical'} 
+                cancelHandler={cancelHandler} 
+                clearHandler={clearHandler} 
+                enterHandler={() => {enterHandler(setNumber)}} 
+           />
         </div>
     );
 };

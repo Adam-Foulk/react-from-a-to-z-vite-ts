@@ -1,0 +1,31 @@
+@import "components/UI/main.less";
+
+.hint {
+    display:flex;
+    align-items: center;
+    gap: var(--sizes-xs);
+    padding: 0 var(--sizes-xs);
+    background-color: #ffefc5;
+    
+    .icon {
+        width: var(--sizes-l);
+        height: var(--sizes-l);
+        
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        .border;
+        border-radius: 50%;
+        font-family: Segoe UI Symbol;
+        font-size: var(--sizes-l);
+        .main-color;
+    }
+    p {
+        font-size: calc(var(--sizes-m) + var(--sizes-xs));
+        font-style: italic;
+        font-weight: bold;
+        &::first-letter {
+            text-transform:uppercase;
+        }
+    }
+}

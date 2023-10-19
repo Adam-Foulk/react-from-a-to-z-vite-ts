@@ -1,0 +1,29 @@
+@import 'components/UI/main.less';
+
+.userForm {
+    width: 100vw;
+    height: 100vh;
+    padding: 5% 25%;
+    display: grid;
+    grid-template: 1fr min-content / 1fr;
+    grid-template-areas: "users" 
+                         "actions"
+    ;
+    gap: var(--sizes-l);
+    
+    .actionForm {
+        grid-area: actions;
+        display: grid;
+        grid-template: 80px / min-content min-content;
+        grid-template-areas: "actions list";
+        justify-content: space-between;
+        gap: var(--sizes-l);
+        
+        .listButtons {
+            grid-area: list;
+            .button {
+                width: 80px;
+            }
+        }
+    }
+}
