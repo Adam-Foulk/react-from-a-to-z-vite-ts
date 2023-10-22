@@ -1,10 +1,10 @@
 import {useState} from 'react'
 import classes from "./FormAuth.module.less"
 
-import MyButton from '../../../UI/MyButton/MyButton'
-import MyInput from '../../../UI/MyInput/MyInput'
+import MyButton from 'components/UI/MyButton/MyButton'
+import MyInput from 'components/UI/MyInput/MyInput'
 
-import InputNumberForm from '../../../UI/InputNumberForm/InputNumberForm'
+import InputNumberForm from 'components/UI/InputNumberForm/InputNumberForm'
 import InputUserForm from './InputUserForm/InputUserForm'
 
 const FormAuth = ({auth, users, ...props}) => {

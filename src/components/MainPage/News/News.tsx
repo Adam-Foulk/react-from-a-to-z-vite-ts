@@ -1,5 +1,5 @@
 import styles from "./News.module.less"
-import MyButton from "../../../UI/MyButton/MyButton";
+import MyButton from "components/UI/MyButton/MyButton";
 
 const News = () => {
     return (

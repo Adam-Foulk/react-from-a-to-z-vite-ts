@@ -1,7 +1,8 @@
 import { useState } from "react"
-import AuthPage from "./components/auth/AuthPage/AuthPage"
-import MainPage from "./components/main/MainPage/MainPage"
+import AuthPage from "./components/AuthPage/AuthPage"
+import MainPage from "./components/MainPage/MainPage"
 import "./less/App.less"
+import ActionPanel from "components/UI/ActionPanel/ActionPanel"
 
 function App() {
 

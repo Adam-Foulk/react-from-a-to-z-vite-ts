@@ -1,0 +1,17 @@
+@import "components/UI/main.less";
+
+.productCatalog {
+    display:grid;
+    
+    width: 100%;
+    height: 100%;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: var(--sizes-xs);
+
+    .fastFood { background-color: var(--product-fast-food); }
+    .healthyFood { background-color: var(--product-healthy-food); }
+    .bakery { background-color: var(--product-bakery); }
+    .baverages { background-color: var(--product-baverages); }
+    .preview { background-color: var(--product-preview); }
+    .home { background-color: var(--product-home); }
+}
