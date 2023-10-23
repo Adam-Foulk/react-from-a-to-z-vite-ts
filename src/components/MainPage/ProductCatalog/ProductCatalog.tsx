@@ -29,28 +29,28 @@ const ProductCatalog = () => {
     }
 
     const Products = [
-        {icon: frenchHotDog, title: "hot dogs", className: styles.fastFood, childs: [
+        {icon: frenchHotDog, title: "hot dog", className: styles.fastFood, childs: [
             {title: "big", childs: [
-                {title: "big milk", code: 223},
-                {title: "big smoked", code: 223},
-                {title: "big chicken", code: 223},
+                {title: "milk", code: 223},
+                {title: "smoked", code: 223},
+                {title: "chicken", code: 223},
             ]},
             {title: "little", childs: [
-                {title: "little milk"},
-                {title: "little smoked"},
-                {title: "little chicken"},
+                {title: "milk"},
+                {title: "smoked"},
+                {title: "chicken"},
             ]},
         ]},
-        {icon: burger, title: "burgers", className: styles.fastFood, childs: [
+        {icon: burger, title: "burger", className: styles.fastFood, childs: [
             {title: "single", childs: [
-                {title: "single cow", code: 223},
-                {title: "single chicken"},
-                {title: "single vegan"},
+                {title: "cow", code: 223},
+                {title: "chicken"},
+                {title: "vegan"},
             ]},
             {title: "double", childs: [
-                {title: "double cow", code: 223},
-                {title: "double chicken"},
-                {title: "double vegan"},
+                {title: "cow", code: 223},
+                {title: "chicken"},
+                {title: "vegan"},
             ]},
         ]},
         {icon: soupPlate, title: "first meal", className: styles.healthyFood, childs: [
@@ -58,49 +58,49 @@ const ProductCatalog = () => {
             {title: "borsch", code: 223},
             {title: "chicken bouillon", code: 223},
             {title: "soup", childs: [
-                {title: "soup with broccoli,", code: 223},
-                {title: "soup kharcho", code: 223},
+                {title: "with broccoli,", code: 223},
+                {title: "kharcho", code: 223},
             ]},
         ]},
-        {icon: spaguetti, title: "main dishes", className: styles.healthyFood, childs: [
+        {icon: spaguetti, title: "main dish", className: styles.healthyFood, childs: [
             {title: "paste", childs: [
-                {title: "paste bolognese", code: 223},
-                {title: "paste carbonara", code: 223},
-                {title: "paste with mushrooms in creamy sauce", code: 223},
+                {title: "bolognese", code: 223},
+                {title: "carbonara", code: 223},
+                {title: "with mushrooms in creamy sauce", code: 223},
             ]},
             {title: "dijon chicken fillet with rice and vegetables", code: 223},
         ]},
-        {icon: frenchFries, title: "snacks", className: styles.fastFood, childs: [
+        {icon: frenchFries, title: "snack", className: styles.fastFood, childs: [
             {title: "chicken wings", code: 223},
             {title: "potatoes", childs: [
-                {title: "country-style potatoes", code: 223},
-                {title: "lattice potatoes", code: 223},
+                {title: "country-style", code: 223},
+                {title: "lattice", code: 223},
             ]},
             {title: "chicken strips", code: 223},
         ]}, 
-        {icon: sandwich, title: "sandwiches", className: styles.fastFood, childs: [
+        {icon: sandwich, title: "sandwich", className: styles.fastFood, childs: [
             {title: "fresh-sandwich", childs: [
-                {title: "fresh-sandwich with tuna", code: 223},
-                {title: "fresh-sandwich with chicken", code: 223},
+                {title: "tuna", code: 223},
+                {title: "chicken", code: 223},
             ]},
             {title: "croissant", childs: [
-                {title: "croissant with ham, ", code: 223},
-                {title: "croissant with cheese", code: 223},
-                {title: "croissant with jamon", code: 223},
+                {title: "ham, ", code: 223},
+                {title: "cheese", code: 223},
+                {title: "jamon", code: 223},
             ]},
             {title: "sandwich", childs: [
-                {title: "sandwich chicken, ", code: 223},
-                {title: "sandwich salami & smoked chicken", code: 223},
-                {title: "sandwich tuna", code: 223},
-                {title: "sandwich salmon", code: 223},
+                {title: "chicken, ", code: 223},
+                {title: "salami & smoked chicken", code: 223},
+                {title: "tuna", code: 223},
+                {title: "salmon", code: 223},
             ]},
         ]}, 
-        {icon: salade, title: "salads", className: styles.healthyFood, childs: [
+        {icon: salade, title: "salad", className: styles.healthyFood, childs: [
             {title: "ham", code: 223},
             {title: "cheese", code: 223},
             {title: "jamon", code: 223},
         ]}, 
-        {icon: breakfast, title: "breakfasts", className: styles.healthyFood, childs: [
+        {icon: breakfast, title: "breakfast", className: styles.healthyFood, childs: [
             {title: "scrambled eggs with sausage", code: 223},
             {title: "cheesecakes", code: 223},
         ]}, 
@@ -140,11 +140,11 @@ const ProductCatalog = () => {
                 {title: "herbal"},
             ]},
         ]},
-        {icon: cake, title: "desserts", className: styles.bakery, childs: [
+        {icon: cake, title: "dessert", className: styles.bakery, childs: [
             {title: "ginger"},
             {title: "lemon"},
         ]}, 
-        {icon: cupcakesvg, title: "cupcakes", className: styles.bakery, childs: [
+        {icon: cupcakesvg, title: "cupcake", className: styles.bakery, childs: [
             {title: "chocolate"},
             {title: "vanilla"},
             {title: "berry"},
@@ -159,12 +159,12 @@ const ProductCatalog = () => {
                 {title: "passion fruit"},
             ]},
         ]}, 
-        {icon: coldDrink, title: "lemonades", className: styles.baverages, childs: [
+        {icon: coldDrink, title: "lemonade", className: styles.baverages, childs: [
             {title: "lemon"},
             {title: "cherries"},
             {title: "passion fruit"},
         ]},
-        {icon: donut, title: "donuts", className: styles.bakery, childs: [
+        {icon: donut, title: "donut", className: styles.bakery, childs: [
             {title: "rasberry"},
             {title: "chocolate"},
             {title: "condensed milk"},
@@ -234,7 +234,7 @@ const ProductCatalog = () => {
                     />
                 </>
             ):
-                ''
+                null
             }
         </div>
     );

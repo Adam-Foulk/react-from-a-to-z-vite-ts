@@ -52,12 +52,15 @@ function App() {
     }
   }
   
-  if(isAuth) { return (
-    <MainPage/>
-  )}
+  // if(isAuth) { return (
+  //   <MainPage/>
+  // )}
 
+  // return (
+  //   <AuthPage users={users} auth={auth}/>
+  // )
   return (
-    <AuthPage users={users} auth={auth}/>
+    <MainPage/>
   )
 }
 
