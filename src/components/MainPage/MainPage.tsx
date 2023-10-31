@@ -7,10 +7,10 @@ import News from './News/News'
 import Hint from './Hint/Hint'
 import FillingPlaces from './FillingPlaces/FillingPlaces'
 import ProductCatalog from './ProductCatalog/ProductCatalog'
-import TabsPannel from './TabsPannel/TabsPannel'
 
 
 import ListButtons from 'components/UI/ListButtons/ListButtons'
+import Tabs from './Tabs/Tabs'
 
 const MainPage = () => {
     const [bonusCard, setBonusCard] = useState({
@@ -20,6 +20,14 @@ const MainPage = () => {
         bonuses: 3.1,
     })
     const [hint, setHint] = useState("welcome to the station!")
+
+    const [items, setItems] = useState([
+        { title: 'London', content: 'London is the capital city of England.' },
+        { title: 'Paris', content: 'Paris is the capital of France.' },
+        { title: 'Tokyo', content: 'Tokyo is the capital of Japan.' },
+    ]);
+
+    const [ active, setActive ] = useState(0);
 
     return (
        <div className={styles.content}>
@@ -42,7 +50,12 @@ const MainPage = () => {
 
             <div className={styles.bottomLeft}>
                 <header>
-                    <TabsPannel/>
+                    <Tabs 
+                        items={items}
+                        setItems={setItems}
+                        active={active}
+                        setActive={setActive}
+                    />
                     <ListButtons/>
                 </header>
                 <main>
