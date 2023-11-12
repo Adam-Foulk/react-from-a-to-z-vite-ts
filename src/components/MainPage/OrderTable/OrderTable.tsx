@@ -16,8 +16,6 @@ const OrderTable = ({orders, activeItem, setActiveItem, active}) => {
     orders[active].content.forEach(item => {
         totalPrice += item.price
     });
-    
-    orders[active].title = totalPrice
 
     return (
         <table className={styles.table}>
