@@ -19,167 +19,176 @@ import coldDrink from "res/product-catalog/cold-drink.svg"
 import donut from "res/product-catalog/donut.svg"
 import croissant from "res/product-catalog/croissant.svg"
 
-const ProductCatalog = () => {
-    
-    const [productCodes, setProductCodes] = useState([])
-    
-    const addProductCode = (code:number) => {
-        console.log(...productCodes, code)
-        setProductCodes([...productCodes, code])
-    }
+const ProductCatalog = ({addProduct}) => {
 
     const Products = [
         {icon: frenchHotDog, title: "hot dog", className: styles.fastFood, childs: [
-            {title: "big", childs: [
-                {title: "milk", code: 223},
-                {title: "smoked", code: 223},
-                {title: "chicken", code: 223},
+            {title: "light bun", childs: [
+                {title: "big", childs: [
+                    {title: "milk", code: 1},
+                    {title: "smoked", code: 2},
+                    {title: "chicken", code: 3},
+                ]},
+                {title: "little", childs: [
+                    {title: "milk", code: 4},
+                    {title: "smoked", code: 5},
+                    {title: "chicken", code: 6},
+                ]}
             ]},
-            {title: "little", childs: [
-                {title: "milk"},
-                {title: "smoked"},
-                {title: "chicken"},
+            {title: "dark bun", childs: [
+                {title: "big", childs: [
+                    {title: "milk", code: 7},
+                    {title: "smoked", code: 8},
+                    {title: "chicken", code: 9},
+                ]},
+                {title: "little", childs: [
+                    {title: "milk", code: 10},
+                    {title: "smoked", code: 11},
+                    {title: "chicken", code: 12},
+                ]}
             ]},
         ]},
         {icon: burger, title: "burger", className: styles.fastFood, childs: [
             {title: "single", childs: [
-                {title: "cow", code: 223},
-                {title: "chicken"},
-                {title: "vegan"},
+                {title: "cow", code: 13},
+                {title: "chicken", code: 14},
+                {title: "vegan", code: 15},
             ]},
             {title: "double", childs: [
-                {title: "cow", code: 223},
-                {title: "chicken"},
-                {title: "vegan"},
+                {title: "cow", code: 16},
+                {title: "chicken", code: 17},
+                {title: "vegan", code: 18},
             ]},
         ]},
         {icon: soupPlate, title: "first meal", className: styles.healthyFood, childs: [
 
-            {title: "borsch", code: 223},
-            {title: "chicken bouillon", code: 223},
+            {title: "borsch", code: 19},
+            {title: "chicken bouillon", code: 20},
             {title: "soup", childs: [
-                {title: "with broccoli,", code: 223},
-                {title: "kharcho", code: 223},
+                {title: "with broccoli,", code: 21},
+                {title: "kharcho", code: 22},
             ]},
         ]},
         {icon: spaguetti, title: "main dish", className: styles.healthyFood, childs: [
             {title: "paste", childs: [
-                {title: "bolognese", code: 223},
-                {title: "carbonara", code: 223},
-                {title: "with mushrooms in creamy sauce", code: 223},
+                {title: "bolognese", code: 23},
+                {title: "carbonara", code: 24},
+                {title: "with mushrooms in creamy sauce", code: 25},
             ]},
-            {title: "dijon chicken fillet with rice and vegetables", code: 223},
+            {title: "dijon chicken fillet with rice and vegetables", code: 26},
         ]},
         {icon: frenchFries, title: "snack", className: styles.fastFood, childs: [
-            {title: "chicken wings", code: 223},
+            {title: "chicken wings", code: 27},
             {title: "potatoes", childs: [
-                {title: "country-style", code: 223},
-                {title: "lattice", code: 223},
+                {title: "country-style", code: 28},
+                {title: "lattice", code: 29},
             ]},
-            {title: "chicken strips", code: 223},
+            {title: "chicken strips", code: 30},
         ]}, 
         {icon: sandwich, title: "sandwich", className: styles.fastFood, childs: [
             {title: "fresh-sandwich", childs: [
-                {title: "tuna", code: 223},
-                {title: "chicken", code: 223},
+                {title: "tuna", code: 31},
+                {title: "chicken", code: 32},
             ]},
             {title: "croissant", childs: [
-                {title: "ham, ", code: 223},
-                {title: "cheese", code: 223},
-                {title: "jamon", code: 223},
+                {title: "ham, ", code: 33},
+                {title: "cheese", code: 34},
+                {title: "jamon", code: 35},
             ]},
             {title: "sandwich", childs: [
-                {title: "chicken, ", code: 223},
-                {title: "salami & smoked chicken", code: 223},
-                {title: "tuna", code: 223},
-                {title: "salmon", code: 223},
+                {title: "chicken, ", code: 36},
+                {title: "salami & smoked chicken", code: 37},
+                {title: "tuna", code: 38},
+                {title: "salmon", code: 39},
             ]},
         ]}, 
         {icon: salade, title: "salad", className: styles.healthyFood, childs: [
-            {title: "ham", code: 223},
-            {title: "cheese", code: 223},
-            {title: "jamon", code: 223},
+            {title: "ham", code: 40},
+            {title: "cheese", code: 41},
+            {title: "jamon", code: 42},
         ]}, 
         {icon: breakfast, title: "breakfast", className: styles.healthyFood, childs: [
-            {title: "scrambled eggs with sausage", code: 223},
-            {title: "cheesecakes", code: 223},
+            {title: "scrambled eggs with sausage", code: 43},
+            {title: "cheesecakes", childs: [
+                {title: "lemon", code: 44},
+                {title: "strawberry", code: 84}
+            ]},
         ]}, 
         {icon: coffee, title: "coffee", className: styles.baverages, childs: [
             {title: "with milk", childs: [
-                {title: "americano"},
-                {title: "cortado"},
-                {title: "espresso"},
+                {title: "americano", code: 80},
+                {title: "cortado", code: 81},
+                {title: "espresso", code: 82},
                 {title: "capuccino", childs: [
-                    {title: "big", code: 223},
-                    {title: "medium", code: 223},
+                    {title: "big", code: 45},
+                    {title: "medium", code: 46},
                 ]},
                 {title: "late", childs: [
-                    {title: "big", code: 223},
-                    {title: "medium", code: 223},
+                    {title: "big", code: 47},
+                    {title: "medium", code: 48},
                 ]},
                 {title: "flat-white", childs: [
-                    {title: "big", code: 223},
-                    {title: "medium", code: 223},
+                    {title: "big", code: 49},
+                    {title: "medium", code: 50},
                 ]},
             ]},
             {title: "without milk", childs: [
-                {title: "espresso"},
-                {title: "americano"},
+                {title: "espresso", code: 51},
+                {title: "americano", code: 52},
             ]},
         ]}, 
         {icon: tea, title: "tea", className: styles.baverages, childs: [
             {title: "natural", childs: [
-                {title: "sea buckthorn"},
-                {title: "currant"},
-                {title: "raspberry"},
-                {title: "ginger"},
+                {title: "sea buckthorn", code: 53},
+                {title: "currant", code: 54},
+                {title: "raspberry", code: 55},
+                {title: "ginger", code: 56},
             ]},
             {title: "bags", childs: [
-                {title: "black"},
-                {title: "green"},
-                {title: "herbal"},
+                {title: "black", code: 57},
+                {title: "green", code: 58},
+                {title: "herbal", code: 59},
             ]},
         ]},
         {icon: cake, title: "dessert", className: styles.bakery, childs: [
-            {title: "ginger"},
-            {title: "lemon"},
+            {title: "ginger", code: 60},
+            {title: "lemon", code: 61},
         ]}, 
         {icon: cupcakesvg, title: "cupcake", className: styles.bakery, childs: [
-            {title: "chocolate"},
-            {title: "vanilla"},
-            {title: "berry"},
+            {title: "chocolate", code: 62},
+            {title: "vanilla", code: 63},
+            {title: "berry", code: 64},
         ]}, 
         {icon: coldCoffee, title: "cold coffee", className: styles.baverages, childs: [
-            {title: "americano"},
-            {title: "capuccino"},
-            {title: "late"},
+            {title: "americano", code: 65},
+            {title: "capuccino", code: 66},
+            {title: "late", code: 67},
             {title: "coffee lemonade", childs: [
-                {title: "lemon"},
-                {title: "cherries"},
-                {title: "passion fruit"},
+                {title: "lemon", code: 68},
+                {title: "cherries", code: 69},
+                {title: "passion fruit", code: 70},
             ]},
         ]}, 
         {icon: coldDrink, title: "lemonade", className: styles.baverages, childs: [
-            {title: "lemon"},
-            {title: "cherries"},
-            {title: "passion fruit"},
+            {title: "lemon", code: 71},
+            {title: "cherries", code: 72},
+            {title: "passion fruit", code: 73},
         ]},
         {icon: donut, title: "donut", className: styles.bakery, childs: [
-            {title: "rasberry"},
-            {title: "chocolate"},
-            {title: "condensed milk"},
+            {title: "rasberry", code: 74},
+            {title: "chocolate", code: 75},
+            {title: "condensed milk", code: 76},
         ]}, 
         {icon: croissant, title: "own bakery", className: styles.bakery, childs: [
-            {title: "chocolate croissant"},
-            {title: "apricot croissant"},
-            {title: "puff pastry apple & nuts"},
+            {title: "chocolate croissant", code: 77},
+            {title: "apricot croissant", code: 78},
+            {title: "puff pastry apple & nuts", code: 79},
         ]},
     ]
 
     const [productPage, setProductPage] = useState(Products)
     const [productPageHistory, setProductPageHistory] = useState([productPage])
 
-    // const [currentPageId, setCurrentPageId] = useState(0)
     const [currentPageId, setCurrentPageId] = useState(0)
 
     useEffect(() => {
@@ -215,7 +224,7 @@ const ProductCatalog = () => {
                         title={product.title}
                         childs={product.childs}
                         code={product.code}
-                        addProductCode={addProductCode}
+                        addProductCode={addProduct}
                         setProductPage={setProductPageHandler}
                     />
                 </>

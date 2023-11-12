@@ -18,7 +18,6 @@ const InputNumberForm = ({setDisplay, setNumber}) => {
         if(value.length > 0)
             setNumber(value)
         console.dir(`INputNumberFormValue: ${value}`)
-        // console.log(`value.length: ${value.length}`)
         setDisplay(false)
     }
 
