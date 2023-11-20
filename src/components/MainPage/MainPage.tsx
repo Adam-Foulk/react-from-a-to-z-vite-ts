@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./MainPage.module.less";
 import {
   TActiveItemNumber,
@@ -756,8 +756,8 @@ const MainPage = () => {
           </main>
         </div>
         <div className={styles.topRight}>
-          {/* <FillingPlaces/> */}
-          <ProductCatalog addProduct={addProduct} />
+          <FillingPlaces />
+          {/* <ProductCatalog addProduct={addProduct} /> */}
         </div>
 
         <div className={styles.bottomLeft}>

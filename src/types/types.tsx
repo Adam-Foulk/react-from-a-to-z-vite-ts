@@ -1,3 +1,5 @@
+import { EState } from "components/MainPage/FillingPlaces/FillingPlace/FillingPlace";
+
 export type TBonusCard = {
   id: number;
   name: string;
@@ -39,3 +41,12 @@ export type TActiveItemNumber = number;
 export type TActiveOrderNumber = number;
 
 export type TPhoneNumber = string;
+
+export type TPlace = {
+  placeNumber: number;
+  state: EState;
+  fuelType: undefined;
+  toFill: undefined;
+  filled: undefined;
+  price: undefined;
+};
