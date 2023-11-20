@@ -5,7 +5,6 @@ import {
   TActiveOrderNumber,
   TBonusCard,
   TOrder,
-  TOrderItem,
   TProduct,
 } from "types/types";
 
@@ -766,8 +765,8 @@ const MainPage = () => {
             <Tabs
               orders={orders}
               setOrders={setOrders}
-              active={activeOrderNumber}
-              setActive={setActiveOrderNumber}
+              activeOrderNumber={activeOrderNumber}
+              setActiveOrderNumber={setActiveOrderNumber}
             />
             <ListButtons onListUp={onListUp} onListDown={onListDown} />
           </header>

@@ -1,5 +1,5 @@
 import styles from "./ProductCatalog.module.less";
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { TProductCatalog, TProductCatalogItem } from "types/types";
 import Product from "./Product/Product";
