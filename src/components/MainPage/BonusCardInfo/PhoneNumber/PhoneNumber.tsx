@@ -1,9 +1,15 @@
-import {useState} from 'react'
+import {FC, useState} from 'react'
 import MyButton from "components/UI/MyButton/MyButton";
 import phoneNumber from "res/phone-number.svg"
 import InputNumberForm from 'components/UI/InputNumberForm/InputNumberForm';
+import { TPhoneNumber } from 'types/types';
 
-const PhoneNumber = ({className, setPhoneNumber}) => {
+type PhoneNumberProps = {
+    className: string,
+    setPhoneNumber: (phoneNumber:TPhoneNumber) => void
+}
+
+const PhoneNumber: FC<PhoneNumberProps> = ({className, setPhoneNumber}) => {
     const [displayInputNumberForm, setDisplayInputNumberForm] = useState(false)
 
     const onPhoneNumber = () => {

@@ -1,5 +1,5 @@
 import styles from "./ProductCatalog.module.less";
-import Product from "./Product/Product";
+import Product, { TCategory } from "./Product/Product";
 import { FC, useEffect, useState } from "react";
 
 import frenchHotDog from "res/product-catalog/french-hot-dog.svg";
@@ -25,10 +25,11 @@ type TProductCatalogProps = {
 };
 
 const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
-  const Products: TProductCatalog = [
+  // const Products: TProductCatalog = [
+  const Products: TCategory = [
     {
-      icon: frenchHotDog,
       title: "hot dog",
+      icon: frenchHotDog,
       className: styles.fastFood,
       childs: [
         {
@@ -373,11 +374,7 @@ const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
       {productPage.map((product: TProductCatalogItem) => (
         <>
           <Product
-            className={product.className}
-            icon={product.icon}
-            title={product.title}
-            childs={product.childs}
-            id={product.id}
+            product={product}
             addProductCode={addProduct}
             setProductPage={setProductPageHandler}
           />
@@ -386,11 +383,17 @@ const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
       {currentPageNumber > 0 ? (
         <>
           <Product
-            title="Preview"
-            className={styles.preview}
+            // product={{ title: "Preview", className: styles.preview }}
+            product={{
+              title: "Preview",
+              className: styles.preview,
+            }}
             onClick={turnPreview}
           />
-          <Product title="Home" className={styles.home} onClick={turnHome} />
+          <Product
+            product={{ title: "Home", className: styles.home }}
+            onClick={turnHome}
+          />
         </>
       ) : null}
     </div>

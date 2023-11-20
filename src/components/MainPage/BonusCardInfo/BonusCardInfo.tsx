@@ -4,10 +4,17 @@ import card from "res/card.svg"
 
 import MyButton from "components/UI/MyButton/MyButton";
 import PhoneNumber from "./PhoneNumber/PhoneNumber";
+import { TBonusCard } from "types/types";
+import { FC } from "react";
 
-const BonusCardInfo = ({bonusCard, setBonusCard}) => {
+type BonusCardInfoProps = {
+    bonusCard: TBonusCard,
+    setBonusCard: (bonusCard: TBonusCard) => void,
+}
+
+const BonusCardInfo: FC<BonusCardInfoProps> = ({bonusCard, setBonusCard}) => {
     
-    const setPhoneNumber = (phoneNumber) => {
+    const setPhoneNumber = (phoneNumber: TPhoneNumber):void => {
         // getting client data with phoneNumber from db
         setBonusCard({
             id: 123,
@@ -15,6 +22,7 @@ const BonusCardInfo = ({bonusCard, setBonusCard}) => {
             phoneNumber: "0966293123",
             bonuses: 3.1
         })
+        console.log(bonusCard)
     }
     
     return (

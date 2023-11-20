@@ -1,17 +1,13 @@
-import styles from "./News.module.less"
+import styles from "./News.module.less";
 import MyButton from "components/UI/MyButton/MyButton";
 
 const News = () => {
-    return (
-        <MyButton className={styles.news}>
-            <p>
-                No news is good news...
-            </p>
-            <p>
-                (press for watching history)
-            </p>
-        </MyButton>
-    );
+  return (
+    <MyButton className={styles.news}>
+      <p>No news is good news...</p>
+      <p>(press for watching history)</p>
+    </MyButton>
+  );
 };
 
 export default News;

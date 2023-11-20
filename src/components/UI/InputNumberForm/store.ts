@@ -3,15 +3,15 @@ import {create} from 'zustand'
 export const useInputNumber = create(set => ({
     value : '',
     display: false,
-    setValue: (value) => set({
+    setValue: (value:string) => set({
         value: value
     }),
-    addValue: (value) => set(state => {
+    addValue: (value:string) => set((state: { value: string }) => {
         const newValue = value
 
         return {value: state.value + newValue}
     }),
-    setDisplay: (value) => set({
+    setDisplay: (value: boolean) => set({
         display: value
     }),
     clearHandler: () => set({
