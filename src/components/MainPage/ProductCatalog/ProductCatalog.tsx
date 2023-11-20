@@ -1,6 +1,8 @@
 import styles from "./ProductCatalog.module.less";
+import { FC, useEffect, useMemo, useState } from "react";
+
+import { TProductCatalog, TProductCatalogItem } from "types/types";
 import Product from "./Product/Product";
-import { FC, useEffect, useState } from "react";
 
 import frenchHotDog from "res/product-catalog/french-hot-dog.svg";
 import burger from "res/product-catalog/burger.svg";
@@ -18,7 +20,6 @@ import coldCoffee from "res/product-catalog/cold-coffee.svg";
 import coldDrink from "res/product-catalog/cold-drink.svg";
 import donut from "res/product-catalog/donut.svg";
 import croissant from "res/product-catalog/croissant.svg";
-import { TProductCatalog, TProductCatalogItem } from "types/types";
 
 type TProductCatalogProps = {
   addProduct: (id: TProductCatalogItem["id"]) => void;
@@ -27,8 +28,8 @@ type TProductCatalogProps = {
 const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
   const Products: TProductCatalog = [
     {
-      icon: frenchHotDog,
       title: "hot dog",
+      icon: frenchHotDog,
       className: styles.fastFood,
       childs: [
         {
@@ -370,14 +371,11 @@ const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
 
   return (
     <div className={styles.productCatalog}>
-      {productPage.map((product: TProductCatalogItem) => (
+      {productPage.map((product: TProductCatalogItem, index: number) => (
         <>
           <Product
-            className={product.className}
-            icon={product.icon}
-            title={product.title}
-            childs={product.childs}
-            id={product.id}
+            key={index}
+            product={product}
             addProductCode={addProduct}
             setProductPage={setProductPageHandler}
           />
@@ -386,11 +384,16 @@ const ProductCatalog: FC<TProductCatalogProps> = ({ addProduct }) => {
       {currentPageNumber > 0 ? (
         <>
           <Product
-            title="Preview"
-            className={styles.preview}
+            product={{
+              title: "Preview",
+              className: styles.preview,
+            }}
             onClick={turnPreview}
           />
-          <Product title="Home" className={styles.home} onClick={turnHome} />
+          <Product
+            product={{ title: "Home", className: styles.home }}
+            onClick={turnHome}
+          />
         </>
       ) : null}
     </div>

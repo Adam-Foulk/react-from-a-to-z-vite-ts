@@ -44,6 +44,7 @@ const OrderTable: FC<OrderTableProps> = ({
 
         {orders[activeOrder].content.map((item, dataIndex) => (
           <Item
+            key={dataIndex}
             item={item}
             isActive={activeItem === dataIndex ? true : false}
             setActive={setActiveItem}
