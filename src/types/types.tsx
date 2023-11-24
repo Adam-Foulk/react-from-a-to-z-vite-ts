@@ -7,28 +7,42 @@ export type TBonusCard = {
   bonuses: number;
 };
 
-export type TProductCatalogItem = {
+export enum EActionVariant {
+  preview = "preview",
+  home = "home",
+}
+
+export enum ECategoryVariant {
+  fastFood = "fastFood",
+  healthyFood = "healthyFood",
+  bakery = "bakery",
+  baverages = "baverages",
+}
+
+export type TProduct = {
   title: string;
   icon?: string;
-  id?: number;
-  className?: string;
-  childs?: TProductCatalogItem[];
+  id: number;
+};
+
+export type TCategory = {
+  title: string;
+  icon?: string;
+  variant?: ECategoryVariant;
+  child: (TCategory | TProduct)[];
 };
 
 export type TProductCatalog = TProductCatalogItem[];
 
-export type TProduct =
-  | undefined
-  | {
-      readonly id: number;
-      readonly name: string;
-      remainder: number;
-      readonly price: number;
-      discount: number;
-    };
+export type TProductCatalogItem = TProduct | TCategory;
 
-export type TOrderItem = TProduct & {
+export type TOrderItem = {
+  id: number;
+  name: string;
+  remainder: number;
   quantity: number;
+  price: number;
+  discount: number;
   sum: number;
 };
 

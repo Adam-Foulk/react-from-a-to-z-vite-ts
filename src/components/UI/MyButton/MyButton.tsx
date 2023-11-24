@@ -6,11 +6,7 @@ type MyButtonProps = HTMLAttributes<HTMLButtonElement>;
 
 const MyButton: FC<MyButtonProps> = ({ className, children, ...props }) => {
   return (
-    <button
-      type={type}
-      {...props}
-      className={classNames(className, styles.myBtn)}
-    >
+    <button {...props} className={classNames(className, styles.myBtn)}>
       {children}
     </button>
   );

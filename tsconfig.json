@@ -5,6 +5,7 @@
     "paths": {
       "components/*": ["components/*"],
       "res/*": ["res/*"],
+      "types/*": ["types/*"]
     },
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],

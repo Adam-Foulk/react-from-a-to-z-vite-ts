@@ -59,11 +59,11 @@ function App() {
     return false;
   };
 
-  if (isAuth) {
-    return <MainPage />;
-  }
+  // if (isAuth) {
+  return <MainPage />;
+  // }
 
-  return <AuthPage users={users} auth={auth} />;
+  // return <AuthPage users={users} auth={auth} />;
 }
 
 export default App;
