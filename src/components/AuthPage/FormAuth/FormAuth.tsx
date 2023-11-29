@@ -4,7 +4,7 @@ import classes from "./FormAuth.module.less";
 import MyButton from "components/UI/MyButton/MyButton";
 import MyInput from "components/UI/MyInput/MyInput";
 
-import InputNumberForm from "components/UI/InputNumberForm/InputNumberForm";
+import InputNumberForm from "components/UI/InputNumberFormOld/InputNumberForm";
 import InputUserForm from "./InputUserForm/InputUserForm";
 import { TUser } from "App";
 

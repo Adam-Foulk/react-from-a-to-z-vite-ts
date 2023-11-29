@@ -1,285 +1,276 @@
 @import "components/UI/main.less";
 
 .content {
-    display:grid;
-    height: 100vh;
-    width: 100vw;
-    padding: 3px 3px;
-    
-    grid-template-rows: 1fr var(--sizes-xl);
-    grid-template-areas: "main" 
-                         "footer"
-    ;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  padding: 3px 3px;
 
-    gap: var(--sizes-xs, 0.25rem);
+  grid-template-rows: 1fr var(--sizes-xl);
+  grid-template-areas:
+    "main"
+    "footer";
 
-    & > .main {
-        grid-area: main;
-        
-        display:grid;
-        grid-template: 1fr 1fr /
-                       1fr 80px calc(50vh - 80px)
-        ;
-        grid-template-areas: "top-left top-right top-right"
-                             "bottom-left bottom-middle bottom-right"
-        ;
+  gap: var(--sizes-xs, 0.25rem);
+
+  & > .main {
+    grid-area: main;
+
+    display: grid;
+    grid-template:
+      1fr 1fr /
+      1fr 80px calc(50vh - 80px);
+    grid-template-areas:
+      "top-left top-right top-right"
+      "bottom-left bottom-middle bottom-right";
+    gap: var(--sizes-s);
+
+    .orderHistoryForm {
+      grid-area: 1 / 1 / 2 / 6;
+      display: grid;
+
+      grid-template: 1fr 150px 1fr / 1fr 75px;
+      grid-template-areas:
+        "orders ."
+        "orders list-buttons"
+        "orders . ";
+      gap: var(--sizes-s);
+      content: center;
+
+      .orders {
+        display: grid;
+        grid-area: orders;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr 1fr;
         gap: var(--sizes-s);
-        
-        .orderHistoryForm {
-            grid-area: 1 / 1 / 2 / 6;
-            display: grid;
-            
-            grid-template   : 1fr 150px 1fr / 1fr 75px;
-            grid-template-areas: "orders ."
-                                 "orders list-buttons"
-                                 "orders . "
-            ;
-            gap: var(--sizes-s);
-            content: center;
 
-            .orders {
-                display: grid;
-                grid-area: orders;
-                grid-template-columns: repeat(5, 1fr);
-                grid-template-rows: 1fr 1fr;
-                gap: var(--sizes-s);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: auto;
 
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: auto;
-                
-                .order {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--sizes-s);
-                    header {
-                        font-size: 16pt;
-                        font-weight: bold;
-                        text-align: center;
-                    }
-                    table {
-                        tr {
-                            grid-template-columns: 1fr 6ch;
-                        }
-                    }
-                    .main-color;
-                    .border;
-                }
+        .order {
+          display: flex;
+          flex-direction: column;
+          gap: var(--sizes-s);
+          header {
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+          }
+          table {
+            tr {
+              grid-template-columns: 1fr 6ch;
             }
-
-            // .list-buttons .vertical moved to components.less
-            .listButtons {
-                grid-area: list-buttons;
-            }
-            .vertical {
-                flex-direction: column;
-                gap: var(--sizes-s);
-                img {
-                    width: 80%;
-                    height: 80%;
-                }
-            }
-
+          }
+          .main-color;
+          .border;
         }
+      }
 
-        // .list-buttons moved to components.less
-
-        .topLeft {
-            grid-area: top-left;
-            
-            display:grid;
-
-            gap: var(--sizes-s);
-            grid-template: 80px 1fr /
-                           80px 1fr
-            ;
-            grid-template-areas: "header-left header-right"
-                                 "main main"
-            ;
-
-            & > main {
-                grid-area: main;
-                .border;
-
-                display:grid;
-                grid-template: 1fr var(--sizes-l) / 1fr;
-                gap: var(--sizes-xs);
-            }
+      // .list-buttons .vertical moved to components.less
+      .listButtons {
+        grid-area: list-buttons;
+      }
+      .vertical {
+        flex-direction: column;
+        gap: var(--sizes-s);
+        img {
+          width: 80%;
+          height: 80%;
         }
-        .topRight {
-            grid-area: top-right;
-
-            .productCatalog {
-                display:grid;
-                
-                
-                width: 100%;
-                height: 100%;
-                grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-                gap: var(--sizes-xs);
-
-                .item {                    
-                    display:flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    
-                    padding: var(--sizes-xs) 0;
-                    img {
-                        width: 60%;
-                        height: 48px;
-                    }
-                    p {
-                        grid-area: text;
-                        font-size: 12pt;
-                        width: 100%;
-                        height: fit-content;
-                    }
-                }
-                .fastFood { background-color: var(--product-fast-food); }
-                .healthyFood { background-color: var(--product-healthy-food); }
-                .bakery { background-color: var(--product-bakery); }
-                .baverages { background-color: var(--product-baverages); }
-            }
-        }
-        .bottomLeft {
-            grid-area: bottom-left;
-            
-            display:grid;
-            grid-template-rows: 48px 1fr;
-            gap: var(--sizes-xs);
-
-
-            header {
-                display:flex;
-                justify-content: space-between;
-
-                gap: var(--sizes-s);
-            }
-        }
-        .bottomMiddle {
-            grid-area: bottom-middle;
-
-            display: grid;
-            justify-items: stretch;
-            align-content: stretch;
-            gap: var(--sizes-s);
-            button {
-                img {
-                    text-align: center;
-                    vertical-align: middle;
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-        }
-        .bottomRight {
-            grid-area: bottom-right;
-            display:grid;
-            grid-template-rows: min-content var(--sizes-m) 150px 1fr 100px;
-            grid-template-columns: 20% 1fr 20%;
-
-            grid-template-areas: "pay-method pay-method pay-method"
-                                 ". . . "
-                                 "form-fields form-fields form-fields"
-                                 " . . . "
-                                 ". check ."
-            ;
-            
-            .payMethodPannel {
-                grid-area: pay-method;
-                display: flex;
-                justify-content: center;
-                gap:var(--sizes-m);
-                button {
-                    width: 80px;
-                    height: 80px;
-                }
-            }
-            .check {
-                grid-area: check;
-                display: grid;
-                grid-template-columns: 48px 1fr;
-                align-items: center;
-                padding: var(--sizes-m);
-                font-size: 20pt;
-                text-decoration: underline;
-                img {
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-        }
+      }
     }
-    & > footer {
-        grid-area: footer;
+
+    // .list-buttons moved to components.less
+
+    .topLeft {
+      grid-area: top-left;
+
+      display: grid;
+
+      gap: var(--sizes-s);
+      grid-template:
+        80px 1fr /
+        80px 1fr;
+      grid-template-areas:
+        "header-left header-right"
+        "main main";
+
+      & > main {
+        grid-area: main;
+        .border;
+
+        display: grid;
+        grid-template: 1fr var(--sizes-l) / 1fr;
+        gap: var(--sizes-xs);
+      }
+    }
+    .topRight {
+      grid-area: top-right;
+
+      .productCatalog {
+        display: grid;
+
+        width: 100%;
+        height: 100%;
+        grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+        gap: var(--sizes-xs);
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+
+          padding: var(--sizes-xs) 0;
+          img {
+            width: 60%;
+            height: 48px;
+          }
+          p {
+            grid-area: text;
+            font-size: 12pt;
+            width: 100%;
+            height: fit-content;
+          }
+        }
+        .fastFood {
+          background-color: var(--product-fast-food);
+        }
+        .healthyFood {
+          background-color: var(--product-healthy-food);
+        }
+        .bakery {
+          background-color: var(--product-bakery);
+        }
+        .baverages {
+          background-color: var(--product-baverages);
+        }
+      }
+    }
+    .bottomLeft {
+      grid-area: bottom-left;
+
+      display: grid;
+      grid-template-rows: 48px 1fr;
+      gap: var(--sizes-xs);
+
+      header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        border-bottom: var(--border-width) solid var(--border-color);
-        .info {
-            display: flex;
-            gap: var(--sizes-m);
 
-            font-family: "Segoe UI Symbol";
-            font-size: 14pt;
-            .state-item {
-                display: flex;
-                gap: var(--sizes-xs);
-                img {
-                    width: var(--sizes-l);
-                    height: var(--sizes-l);
-                }
-            }
-        }
-        .dateTime {
-            font-family: "Segoe UI Symbol";
-            font-size: 20pt;
-        }
-    }
-
-    .inputNumberForm {
-        width: 500px;
-        height: 500px;
-        position: absolute;
-        top: calc(50% - 250px);
-        left: calc(50% - 250px);
-        
-        padding: var(--sizes-l);
-        background-color: #fff;
-        .border;
-        
-        display: grid;
-        
         gap: var(--sizes-s);
-        
-        grid-template: var(--sizes-xl) 1fr / 1fr 150px;
-        grid-template-areas: "input input"
-                             "numbers actions"
-        ;
-        input {
-            grid-area: input;
-            font-size: var(--sizes-xl);
-            text-align: right;
-        }
-        .numberPannel {
-            grid-area: numbers;
-            display:grid;
-            grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-            gap: var(--sizes-s);
-            button { 
-                font-size: 24pt; 
-                background-color: var(--input-form-numbers);
-            }
-        }
-        .actionPanel {
-            grid-area: actions;
-            grid-template-rows: repeat(3, 75px);
-            .clear {
-                background-color: var(--input-form-clear);
-            }
-        }
-        
+      }
     }
+    .bottomMiddle {
+      grid-area: bottom-middle;
+    }
+    // .bottomMiddle moved to OrderPanel.module.less
+    .bottomRight {
+      grid-area: bottom-right;
+      display: grid;
+      grid-template-rows: min-content var(--sizes-m) 150px 1fr 100px;
+      grid-template-columns: 20% 1fr 20%;
 
+      grid-template-areas:
+        "pay-method pay-method pay-method"
+        ". . . "
+        "form-fields form-fields form-fields"
+        " . . . "
+        ". check .";
+
+      .payMethodPannel {
+        grid-area: pay-method;
+        display: flex;
+        justify-content: center;
+        gap: var(--sizes-m);
+        button {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .check {
+        grid-area: check;
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        align-items: center;
+        padding: var(--sizes-m);
+        font-size: 20pt;
+        text-decoration: underline;
+        img {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+  & > footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--border-width) solid var(--border-color);
+    .info {
+      display: flex;
+      gap: var(--sizes-m);
+
+      font-family: "Segoe UI Symbol";
+      font-size: 14pt;
+      .state-item {
+        display: flex;
+        gap: var(--sizes-xs);
+        img {
+          width: var(--sizes-l);
+          height: var(--sizes-l);
+        }
+      }
+    }
+    .dateTime {
+      font-family: "Segoe UI Symbol";
+      font-size: 20pt;
+    }
+  }
+
+  .inputNumberForm {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+
+    padding: var(--sizes-l);
+    background-color: #fff;
+    .border;
+
+    display: grid;
+
+    gap: var(--sizes-s);
+
+    grid-template: var(--sizes-xl) 1fr / 1fr 150px;
+    grid-template-areas:
+      "input input"
+      "numbers actions";
+    input {
+      grid-area: input;
+      font-size: var(--sizes-xl);
+      text-align: right;
+    }
+    .numberPannel {
+      grid-area: numbers;
+      display: grid;
+      grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+      gap: var(--sizes-s);
+      button {
+        font-size: 24pt;
+        background-color: var(--input-form-numbers);
+      }
+    }
+    .actionPanel {
+      grid-area: actions;
+      grid-template-rows: repeat(3, 75px);
+      .clear {
+        background-color: var(--input-form-clear);
+      }
+    }
+  }
 }

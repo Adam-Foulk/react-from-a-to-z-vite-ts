@@ -2,7 +2,7 @@ import styles from "./FillingPlaces.module.less";
 
 import FillingPlace from "./FillingPlace/FillingPlace";
 import PlaceInputForm from "./PlaceInputForm/PlaceInputForm";
-import { useInputNumber } from "components/UI/InputNumberForm/store";
+import { useInputNumber } from "components/UI/InputNumberFormOld/store";
 import { useState } from "react";
 
 const FillingPlaces = () => {

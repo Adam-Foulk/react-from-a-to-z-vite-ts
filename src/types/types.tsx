@@ -1,5 +1,11 @@
 import { EState } from "components/MainPage/FillingPlaces/FillingPlace/FillingPlace";
 
+export type TUser = {
+  id: number;
+  name: string;
+  pass: string;
+};
+
 export type TBonusCard = {
   id: number;
   name: string;

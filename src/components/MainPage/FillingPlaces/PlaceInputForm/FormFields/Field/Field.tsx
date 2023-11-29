@@ -1,5 +1,5 @@
 import MyButton from "components/UI/MyButton/MyButton";
-import InputNumberForm from "components/UI/InputNumberForm/InputNumberForm";
+import InputNumberForm from "components/UI/InputNumberFormOld/InputNumberForm";
 import { FC, useState } from "react";
 import styles from "./Field.module.less";
 import classNames from "classnames";

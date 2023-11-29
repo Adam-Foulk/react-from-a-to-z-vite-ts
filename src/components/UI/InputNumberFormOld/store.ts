@@ -7,9 +7,12 @@ export const useInputNumber = create((set, get) => ({
     set({
       value: value,
     }),
-  setNumber: (number: string) => void,
-  setSetNumber: (setNumber: (number: string) => void) => set({setNumber: setNumber}),
-  addValue: (value: string) => set({ value: get().value + value }),
+  addValue: (value: string) =>
+    set((state: { value: string }) => {
+      const newValue = value;
+
+      return { value: state.value + newValue };
+    }),
   setDisplay: (value: boolean) =>
     set({
       display: value,
@@ -21,5 +24,11 @@ export const useInputNumber = create((set, get) => ({
   cancelHandler: () =>
     set({
       display: false,
+    }),
+  enterHandler: (setNumber) =>
+    set((state) => {
+      setNumber(state.value || "0");
+      // state.display = false
+      return { display: false };
     }),
 }));
